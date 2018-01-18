@@ -20,6 +20,8 @@ as well as confidence.
 
 3. The labels are all lower case in which case I would change only the first letters of each label to uppercase. 
 
+4. [OPTIONAL] You can even add a little avatar of the users image to the right of the name using border radius of 50%. This way the user can feel more ownership of his Driver UI Card. Not necessary, but an idea. 
+
 Pipe Info
 ---------
 
@@ -37,3 +39,8 @@ Emergency Contact
 ----------------- 
 
 1. This is a very minor change, but I would change the label 'number' to 'phone' since in the contact section you use the label 'phone'. This is only for consistency purposes. 
+
+Conclusion
+----------
+
+Overall the Driver UI Card is very nice. I like the fact the card has a box shadow to give it a 3-D like effect. The text is easy to read and the information is easy to navigate. The above are just some suggestions that I would make. 
