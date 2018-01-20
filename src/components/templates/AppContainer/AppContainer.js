@@ -43,9 +43,9 @@ class AppContainer extends Component {
 									<tr style={styles.spaceItems} className="clickToEdit" 
 									onClick={() => this.setState({ modalOpen: true })}>
 										<td>{rental.status}</td>
-										<td>Machiabevelli_821501</td>
-										<td>John Doe</td>
-										<td>johndoe@email.com</td>
+										<td>{rental.brand}</td>
+										<td>{rental.first_name} {rental.last_name}</td>
+										<td>{rental.email}</td>
 										<td>{rental.start_date}</td>
 										<td>-</td>
 										<td>{rental.rate}</td>
