@@ -13,7 +13,6 @@ export default {
 		border: 0,
 		margin: 0,
 		boxSizing: 'border-box',
-//		transition: 'all .5s'
 	},
 	
 	// Gray Color - '#95a5a6'
@@ -218,6 +217,14 @@ export default {
 	
 	save: {
 		color: '#e74c3c'
+	},
+	
+	returnEmpty: {
+		content: '-'
+	},
+	
+	deleteEntry: {
+		display: 'none'
 	}
 	
 }

@@ -15,7 +15,6 @@ export default {
 		'-ms-box-sizing': 'border-box',
 		'-o-box-sizing': 'border-box',
 		'box-sizing': 'border-box',
-//		'transition': 'all .5s'
   	},
 
 
@@ -95,6 +94,7 @@ export default {
 	'.headerSection': {
 		width: '100%',
 		height: '100px',
+		padding: '0 25px 35px',
 		backgroundColor: '#c0392b'
 	},
 	
