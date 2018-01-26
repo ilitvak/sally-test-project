@@ -57,7 +57,7 @@ export default {
 	
 	mainContent: {
 		maxWidth: '1200px',
-		height: 330,
+		height: "auto",
 		borderRadius: '4px',
 		margin: '0 auto',
 		backgroundColor: '#fff',
@@ -225,6 +225,10 @@ export default {
 	
 	deleteEntry: {
 		display: 'none'
+	},
+	
+	deleteItem: {
+		display: "none"
 	}
 	
 }

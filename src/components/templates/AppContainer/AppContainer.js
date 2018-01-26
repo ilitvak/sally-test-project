@@ -17,16 +17,33 @@ class AppContainer extends Component {
 			initialModalStatus: false
 		};
 		
-		this.currentRental = {};
+        this.currentRental = {};
+        
+		this.rentals = rentals;
     }
+
+    deleteEntry = () => {	
+		if(this.currentRental) {
+			this.rentals.forEach( (r, index) => {
+                console.log(r);
+				if(this.currentRental.id === r.id){
+                    console.log(`The current rental id is ${this.currentRental.id} and the r id is: ${r.id}`);
+					console.log(`The current index is ${index} and ${JSON.stringify(this.rentals[index])}`);
+                    this.rentals.splice(index, 1);
+                    console.log(this.rentals.splice(index, 1));
+				}
+			})
+        }
+        this.closeModal(); 
+	}
 	
 	closeModal = () => {
 		this.setState({
 			initialModalStatus: false
-		})
+		});
 	}
 	
-	onModalOpen() {
+	onModalOpen = () => {
 		this.setState({
 			initialModalStatus: true
 		});
@@ -35,6 +52,21 @@ class AppContainer extends Component {
 	populateModal = (rental) => {
 		this.currentRental = rental;
 		this.onModalOpen();
+	}
+	
+	printTable = () => {
+		return this.rentals.map( (rental, i) => {
+			return <tr style={styles.spaceItems} key={i} className="clickToEdit"
+				onClick={() => this.populateModal(rental)}>
+					<td>{rental.status}</td>
+					<td>{rental.brand}</td>
+					<td>{rental.first_name} {rental.last_name}</td>
+					<td>{rental.email}</td>
+					<td>{rental.start_date}</td>
+					<td>{rental.end_date}</td>
+					<td>{rental.rate}</td>
+				</tr>
+		})
 	}
 	
 	render () {
@@ -63,18 +95,7 @@ class AppContainer extends Component {
 									<th>Return</th>
 									<th>Rate</th>
 								</tr>
-								{rentals.map((rental, i) => (
-									<tr style={styles.spaceItems} key={i} className="clickToEdit" 
-									onClick={() => this.populateModal(rental)}>
-										<td>{rental.status}</td>
-										<td>{rental.brand}</td>
-										<td>{rental.first_name} {rental.last_name}</td>
-										<td>{rental.email}</td>
-										<td>{rental.start_date}</td>
-										<td>{rental.end_date}</td>
-										<td>{rental.rate}</td>
-									</tr>
-								))}
+								{this.printTable()}
 							</tbody>
 						</table>
 					</div>
@@ -82,10 +103,10 @@ class AppContainer extends Component {
 						initModalStatus = {this.state.initialModalStatus} 
 						closeModal = {() => this.closeModal}
 						rental = {this.currentRental}
+						deleteEntry = {() => this.deleteEntry}
 						/>
 				</div>
 			</div>	
-
 		);
 	} 
 } 

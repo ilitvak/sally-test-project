@@ -6,17 +6,16 @@ import styles from './styles';
 export default class Modal extends React.Component {
 	
 	constructor(props){
-		super();
+        super(props);
 		
 		this.state = {
 			holdModalStatus: props.initModalStatus,
-		}
+        }
+        
 	}
 
-	
 	render(){
-		
-		let rental = this.props.rental;
+        let rental = this.props.rental;
 		
 		console.log("Modal.js : rental state date: " + JSON.stringify(rental) );
 
@@ -86,12 +85,12 @@ export default class Modal extends React.Component {
 						<div style={styles.modalFooter}>
 							<div style={styles.modalFooterContent} className='clearFix'>
 								<div style={styles.modalSpace} className="lft-flt">
-									<a href='' style={styles.delete}>
-										<p>DELETE</p>
+									<a href="#" style={styles.delete}>
+										<p onClick={this.props.deleteEntry()}>DELETE</p>
 									</a>
 								</div>
 								<div style={styles.modalSpace} className='rgt-flt'>
-									<a href='' style={styles.save}>
+									<a href="#" style={styles.save}>
 										<p>SAVE</p>
 									</a>
 								</div>
