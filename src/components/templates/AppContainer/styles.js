@@ -225,10 +225,30 @@ export default {
 	
 	deleteEntry: {
 		display: 'none'
-	},
-	
-	deleteItem: {
-		display: "none"
-	}
-	
+    },
+    
+    /* ----------------------------- */
+	/* Rental Table Status Colors 
+    /* ----------------------------- */
+    // Reserved - #d63031
+    // Active - #00b894
+    // Returned - #6c5ce7
+    // Archived - #2d3436
+        
+    reservedBg: {
+        color: '#d63031',
+        fontSize: 20
+    },
+
+    activeBg: {
+        color: '#00b894'
+    },
+
+    returnedBg: {
+        color: "#6c5ce7"
+    },
+
+    archivedBg: {
+        color: "#2d3436"
+    }
 }

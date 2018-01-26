@@ -184,6 +184,26 @@ export default {
 	'.rgt-flt': {
 		marginBottom: 0,
 		float: 'right'
-	}
+    },
+    
+    ".reservedBg": {
+        color: '#d63031',
+        fontWeight: 'bold'
+    },
+
+    ".activeBg": {
+        color: '#00b894',
+        fontWeight: 'bold'
+    },
+
+    ".returnedBg": {
+        color: "#6c5ce7",
+        fontWeight: 'bold'
+    },
+
+    ".archivedBg": {
+        color: "#2d3436",
+        fontWeight: 'bold'
+    }
 	
 };
