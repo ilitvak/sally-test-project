@@ -197,13 +197,13 @@ export default {
     },
 
     ".returnedBg": {
-        color: "#6c5ce7",
+        color: "#0984e3",
         fontWeight: 'bold'
     },
 
     ".archivedBg": {
         color: "#2d3436",
         fontWeight: 'bold'
-    }
-	
+    },
+
 };

@@ -226,6 +226,14 @@ export default {
 	deleteEntry: {
 		display: 'none'
     },
+
+    emptyDataTrue: {
+        display: "none"
+    },
+
+    emptyDataFalse: {
+        display: "block"
+    },
     
     /* ----------------------------- */
 	/* Rental Table Status Colors 
