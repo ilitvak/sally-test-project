@@ -11,18 +11,17 @@ export default class Modal extends React.Component {
 		this.state = {
 			holdModalStatus: props.initModalStatus,
         }
-        
-	}
+    }
 
 	render(){
         let rental = this.props.rental;
-		
-		console.log("Modal.js : rental state date: " + JSON.stringify(rental) );
-
+        console.log(this.props.rental);
+        let bgModalColor = this.props.bgModalHead;
+        console.log("The returned value is " + this.props.bgModalHead);
 		return (
-			
+            
 			<div className="modal" style={ this.props.initModalStatus ? styles.modalOpen : styles.modalClosed}>
-				<div className="headerSection">
+				<div className={`headerSection ${bgModalColor}`}>
 					<div style={styles.Container}>
 						<h2>Some Vehicle</h2>
 						<p>Reserved</p>

@@ -244,19 +244,19 @@ export default {
     // Archived - #2d3436
         
     reservedBg: {
-        color: '#d63031',
+        backgroundColor: '#d63031',
         fontSize: 20
     },
 
     activeBg: {
-        color: '#00b894'
+        backgroundColor: '#00b894' 
     },
 
     returnedBg: {
-        color: "#6c5ce7"
+        backgroundColor: "#6c5ce7"
     },
 
     archivedBg: {
-        color: "#2d3436"
+        backgroundColor: "#2d3436"
     }
 }

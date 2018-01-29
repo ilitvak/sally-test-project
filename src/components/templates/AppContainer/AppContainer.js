@@ -6,8 +6,11 @@ import Modal from './modal';
 import Image from '../../../font-awesome-4.7.0/searchIcon.png';
 import Proptypes from 'prop-types';
 
-// Component styles
+// Component styles from Radium StyleSheet
 import styles from './styles';
+
+// Regular Style Sheet
+import styleCSS from '../../../styles/styles'
 
 class AppContainer extends Component {
 	
@@ -19,19 +22,36 @@ class AppContainer extends Component {
             tdEndDateEmpty: null
 		};
         this.currentRental = {};
-		this.rentals = rentals;
+        this.rentals = rentals;
+        this.currentBgColor = "";
     }
 
     colorInStatus = (rental) => {
-        if(rental) {
+        if(rental) {            
             if(rental.status === 'reserved'){
-                return "reservedBg";
+                return "reservedTextColor";
             } else if(rental.status === 'active') {
-                return "activeBg";
+                return "activeTextColor";
             } else if(rental.status === 'returned') {
-                return "returnedBg"
+                return "returnedTextColor";
             } else if(rental.status === 'archived') {
-                return "archivedBg"
+                return "archivedTextColor";
+            }
+        }
+    }
+
+    modalBgColor = (rental) => {
+        if(rental) {
+        console.log("YOOOOOO");
+            
+            if(rental.status === 'reserved'){
+                return "reservedBgColor";
+            } else if(rental.status === 'active') {
+                return "activeBgColor";
+            } else if(rental.status === 'returned') {
+                return "returnedBgColor";
+            } else if(rental.status === 'archived') {
+                return "archivedBgColor";
             }
         }
     }
@@ -39,7 +59,6 @@ class AppContainer extends Component {
     emptyDate = (rental) => {
         if(rental) {
             if(rental.end_date === "") {
-                console.log("tdEmptyDate: " + this.state.tdEndDateEmpty);
                 this.state.tdEndDateEmpty = true;
             }
             else if(rental.end_date !== ""){
@@ -76,12 +95,11 @@ class AppContainer extends Component {
 	
 	populateModal = (rental) => {
 		this.currentRental = rental;
-		this.onModalOpen();
+        this.onModalOpen();
+        this.currentBgColor = this.modalBgColor(rental);
 	}
 	
 	printTable = () => {
-        this.colorInStatus();
-        this.emptyDate();
 		return this.rentals.map( (rental, i) => {
 			return <tr style={styles.spaceItems} key={i} className="clickToEdit"
 				onClick={() => this.populateModal(rental)}>
@@ -92,7 +110,7 @@ class AppContainer extends Component {
 					<td>{rental.start_date}</td>
 					<td>{rental.end_date}<span className={this.emptyDate(rental)} style={this.state.tdEndDateEmpty ? styles.emptyDataFalse : styles.emptyDataTrue }>-</span></td>
 					<td>{rental.rate}</td>
-				</tr>
+                </tr>    
         })
 	}
 	
@@ -130,7 +148,8 @@ class AppContainer extends Component {
 						initModalStatus = {this.state.initialModalStatus} 
 						closeModal = {() => this.closeModal}
 						rental = {this.currentRental}
-						deleteEntry = {() => this.deleteEntry}
+                        deleteEntry = {() => this.deleteEntry}
+                        bgModalHead = {this.currentBgColor}
 						/>
 				</div>
 			</div>	

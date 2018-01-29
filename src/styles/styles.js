@@ -186,24 +186,40 @@ export default {
 		float: 'right'
     },
     
-    ".reservedBg": {
+    ".reservedTextColor": {
         color: '#d63031',
         fontWeight: 'bold'
     },
 
-    ".activeBg": {
+    ".reservedBgColor": {
+        backgroundColor:'#d63031'
+    },
+
+    ".activeTextColor": {
         color: '#00b894',
         fontWeight: 'bold'
     },
 
-    ".returnedBg": {
+    ".activeBgColor": {
+        backgroundColor:'#00b894'
+    },
+
+    ".returnedTextColor": {
         color: "#0984e3",
         fontWeight: 'bold'
     },
 
-    ".archivedBg": {
+    ".returnedBgColor": {
+        backgroundColor:'#0984e3'
+    },
+
+    ".archivedTextColor": {
         color: "#2d3436",
         fontWeight: 'bold'
     },
+
+    ".archivedBgColor": {
+        backgroundColor:'#2d3436'
+    }
 
 };
