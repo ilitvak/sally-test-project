@@ -42,7 +42,6 @@ class AppContainer extends Component {
 
     modalBgColor = (rental) => {
         if(rental) {
-        console.log("YOOOOOO");
             
             if(rental.status === 'reserved'){
                 return "reservedBgColor";

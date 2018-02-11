@@ -9,15 +9,22 @@ export default class Modal extends React.Component {
         super(props);
 		
 		this.state = {
-			holdModalStatus: props.initModalStatus,
+            holdModalStatus: props.initModalStatus,
+            initialRental: props.rental,
+            currentRental: props.rental
         }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event){
+        this.setState({currentRental: event.target.value});
+        console.log(`The value is ${this.state.value} and the target value is ${event.target.value}`);
     }
 
 	render(){
         let rental = this.props.rental;
-        console.log(this.props.rental);
         let bgModalColor = this.props.bgModalHead;
-        console.log("The returned value is " + this.props.bgModalHead);
+        //console.log("The returned value is " + this.props.bgModalHead);
 		return (
             
 			<div className="modal" style={ this.props.initModalStatus ? styles.modalOpen : styles.modalClosed}>
@@ -37,17 +44,17 @@ export default class Modal extends React.Component {
 						 <div style={styles.formContainer}>
 							<div style={styles.inputWidth}>
 								<label>Start Date</label>
-								<input type="text" name="start_date" style={styles.modalInput} value={rental.start_date} onChange={(e) => console.log(e)}/>
+								<input type="text" name="start_date" style={styles.modalInput} value={rental.start_date} onChange={this.handleChange}/>
 							</div>
 
 							<div style={styles.inputWidth}>
 								<label>End Date</label>
-								<input style={styles.modalInput} value={rental.end_date} type="text" name="end_date" onChange={(e) => console.log(e)} />
+								<input style={styles.modalInput} value={rental.end_date} type="text" name="end_date" onChange={this.handleChange} />
 							</div>
 
 							<div style={styles.inputWidth}>
 								<label>Rate</label>
-								<input style={styles.modalInput} value={rental.rate} type="number" onChange={(e) => console.log(e)}/>
+								<input style={styles.modalInput} value={rental.rate} type="number" onChange={this.handleChange}/>
 							</div>
 
 							<div style={styles.inputWidth}>
@@ -63,21 +70,21 @@ export default class Modal extends React.Component {
 
 						<div style={styles.formContainer}>
 							<label>Vehicle</label>
-							<input style={styles.modalInput} onChange={(e) => console.log(e)} value={rental.brand}/>
+							<input style={styles.modalInput} value={this.state.currentRental.brand} onChange={this.handleChange}/>
 						</div>
 
 						<div style={styles.formContainer}>
 							<div style={styles.inputWidth}>
 								<label>First Name</label>
-								<input style={styles.modalInput} value={rental.first_name} onChange={(e) => console.log(e)}/>
+								<input style={styles.modalInput} value={rental.first_name} onChange={this.handleChange}/>
 							</div>
 							<div style={styles.inputWidth}>
 								<label>Last Name</label>
-								<input style={styles.modalInput} onChange={(e) => console.log(e)} value={rental.last_name}/>
+								<input style={styles.modalInput} value={rental.last_name} onChange={this.handleChange}/>
 							</div>
 							<div style={styles.lastInputModal}>
 								<label>Email</label>
-								<input style={styles.modalInput} onChange={(e) => console.log(e)} value={rental.email}/>
+								<input style={styles.modalInput} value={rental.email} onChange={this.handleChange}/>
 							</div>
 						</div>
 
